@@ -1,12 +1,63 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>My test page</title>
-  </head>
-  <body>
-    <h1>Cat的<strong>密码</strong></h1>
-    <img src="images/cat.jpg" alt="a running cat">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>jiiiong</title>
+  <meta name="description" content="search engine optimizaiton" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- <style>
+    p {
+    background-image: url("images/cat.jpg");
+    }
+  </style> -->
+</head>
+
+<body>
+  <header>
+    <h1 class="specificity">about jiiiong</h1>
+    <p>关于我的一些东西</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="home">home</li>
+      <li><a href="pages/life.html" title="this is a tooltip">life</a></li>
+      <li><a href="pages/life.html">thoughts</a></li>
+      <li><a href="pages/life.html">techs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- <svg width="300" height="200">
+      <rect width="100%" height="100%" fill="green" />
+    </svg> -->
+
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk?si=lbwNNmm1FGZuWxw9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    <picture>
+      <source media="(max-width: 500px)" srcset="images/lanscape_s.png">
+      <source media="(min-width: 600px)" srcset="images/lanscape.jpg">
+      <img src="images/cat.jpg" alt="a cat" />
+    </picture>
+
+    <img
+      srcset="images/lanscape_s.png 480w, images/lanscape.jpg 1920w"
+      sizes="(max-width: 600px) 400px,
+             95vw"
+      src="images/lanscape.jpg"
+      alt="a responsive lanscape image" />
+
     <p>为啥猫不在十二生肖之中</p>
-  </body>
+    <video controls poster="images/cat.jpg" >
+      <source src="images/rabbit320.webm" type="video/webm" />
+      <source src="images/rabbit320.mp4" type="video/mp4" />
+      <a href="rabbit320.webm">link to the video</a>
+    </video>
+  </main>
+
+  <footer>
+    <a href="mailto:z.991129@outlook.com?subject=hello">mailto jiiiong</a>
+  </footer>
+</body>
+
 </html>

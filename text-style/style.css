@@ -1,0 +1,127 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+/* set fonts */
+html{
+  font-family: "Zilla Slab", serif;
+  font-size: 16px;
+}
+
+h1,
+h2{
+  font-family: "Oswald", sans-serif;
+}
+
+ul,
+ol,
+dl,
+p {
+  font-size: 1rem;
+}
+
+
+/* block spacing */
+ul li,
+ol li,
+p{
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+ul li{
+  list-style-type: square;
+}
+
+/* align text in header and footer */
+header h1,
+footer p{
+  text-align: center;
+}
+
+section h2 + p{
+  text-indent: 2em;
+}
+
+
+/* style links of all states */
+
+section a{
+  padding-inline-end: 1em;
+  background: url(external-link-52.png)
+              right top/ 0.8em 
+              no-repeat;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+a:visited{
+  color: rebeccapurple;
+}
+
+a:hover{
+  color:#a66;
+  text-decoration: underline;
+}
+a:focus{
+  outline: transparent;
+  background-color: #559999;
+}
+a:active{
+  color: #559999;
+  background-color: #aa6666;
+}
+
+nav ul li{
+  list-style-type: none;
+  line-height: 3;
+  border: 2px solid #a66;
+  text-align: center;
+  margin: 1em auto;
+
+}
+
