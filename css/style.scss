@@ -1,10 +1,13 @@
 @use 'reset';
 
 // 颜色方案
-$color-bg: #071952;
-$color-media: #088395;
-$color-large: #37B7C3;
-$color-text: #EBF4F6;
+$color-primary: #F9F9f9;
+$color-secondary: #0e1e23;
+$color-accent: #ee4865;
+
+// $color-primary: #e3f9fd;
+// $color-secondary: #0e1e23;
+// $color-accent: #0b3289;
 
 $br-sm: 16px;
 
@@ -27,7 +30,7 @@ body {
     // 还缺字体
     font-family: sans-serif;
     font-size: 1.1rem;
-    color: $color-text;
+    color: $color-secondary;
 }
 
 a {
@@ -50,7 +53,7 @@ a {
 
     &.sec1 {
         transform: translateY(0) scaleY(1);
-        background-color: #040f31;
+        background-color: $color-primary;
     }
     
     &.sec2 {
@@ -120,13 +123,13 @@ nav {
             border-radius: 40%;
             border: 0;
             
-            background-color: $color-media;
+            background-color: $color-secondary;
             box-shadow: var(--box-shadow-1);
             
             // style
             transition: var(--transition);
             text-decoration-line: none;
-            color: inherit;
+            color: $color-primary;
 
             // content layout
             display: flex;
@@ -137,7 +140,8 @@ nav {
 
             &:hover,
             &.actived-btn {
-                background-color: lighten($color-large, 10%);
+                color: $color-accent;
+                // background-color: lighten($color-secondary, %);
                 // color: lighten($color-text, 20%);
             }
 
@@ -177,7 +181,7 @@ nav {
             // box-size
             width: 65%;
             height: 100%;
-            background-color: $color-media;
+            background-color: $color-secondary;
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
         }
 
@@ -187,12 +191,20 @@ nav {
             border-radius: $br-sm;
             width: 68%;
             margin-left: 10%;
-            background-color: rgb(242, 167, 179);
+            background-color: lighten($color-accent, 20%);
+            // background-color: rgb(242, 167, 179);
             overflow: hidden;
-            transition: var(--transition);
+            
+            
             img {
                 object-fit: cover;
+                filter: blur(10px);
+                transition: var(--transition);
+                &:hover {
+                    filter: none;
+                }
             }
+
         }
     }
 
@@ -205,7 +217,7 @@ nav {
             font-size: 3rem;
             transition: var(--transition);
             span {
-                color: $color-media;
+                color: $color-accent;
             }
         }
         p {
@@ -219,6 +231,8 @@ nav {
 
 }
 
+
+
 // independent components
 .btn-container {
     display: flex;
@@ -226,14 +240,15 @@ nav {
 .main-btn {
     
     // box
-    border: 1px solid $color-large;
+    border: 3px solid $color-accent;
     border-radius: 30px;
 
+    
     position: relative;
     // content layout
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow: clip;
     // content style
     color: inherit;
     // text-decoration: none;
@@ -248,7 +263,7 @@ nav {
         // box
         padding: .5rem;
         border-radius: 50%;
-        background-color: $color-large;
+        background-color: $color-accent;
         overflow: hidden;
 
         display: flex;
@@ -272,7 +287,7 @@ nav {
             transform: translateX(0);
             width: 100%;
             height: 100%;
-            background-color: $color-large;
+            background-color: $color-accent;
 
             border-top-left-radius: 32px;
             border-bottom-left-radius: 32px;
