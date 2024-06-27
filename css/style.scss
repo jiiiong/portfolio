@@ -322,10 +322,26 @@ nav {
 .about-skills {
     margin-top: $area-padding;
     h3 {
+        padding: $block-padding;
         text-align: center;
         font-size: 2rem;
         span {
             color: $color-accent;
+        }
+        position: relative;
+
+        &::before {
+            content: "";
+            background-color: lighten($color-secondary, 80%);
+            height: 2px;
+            width: 40%;
+
+            // 
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+
         }
     }
     .progess-cards {
@@ -387,6 +403,7 @@ nav {
         justify-content: center;
         img {
             // height: 200px;
+            width: 100%;
             align-self: stretch;
             border-radius: $br-sm;
             object-fit: cover;
@@ -409,13 +426,18 @@ nav {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
 
             h3 {
                 color: $color-accent;
             }
             
             p {
-                margin: $block-padding;
+                padding: $block-padding;
+                width: 100%;
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .links {
@@ -452,10 +474,49 @@ nav {
     }
 }
 
-// .portfolio-item:hover .project-info {
-//     opacity: 1;
-//     transform: scale(1);
-// }
+// blogs
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $area-padding;
+    margin-top: $area-padding;
+    
+    .blog-item {
+        position: relative;
+        background-color: lighten($color-secondary, 80%);
+        // padding: $block-padding;
+        border-radius: $br-sm;
+        box-shadow: 1px 1px 10px $color-secondary;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        img {
+            order: -1;
+            border-top-left-radius: $br-sm;
+            border-top-right-radius: $br-sm;
+            width: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-info {
+            // order: 0;
+            padding: $content-padding;
+            border-top: 3px solid $color-accent;
+            h3 {
+                text-align: left;
+                transition: var(--transition);
+            }
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 10px $color-accent;
+            h3 {
+                color: $color-accent;
+            }
+        }
+    }
+}
 
 // independent components
 .btn-container {
