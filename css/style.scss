@@ -9,6 +9,9 @@ $color-accent: #ee4865;
 // $color-secondary: #0e1e23;
 // $color-accent: #0b3289;
 
+$area-padding: 2rem;
+$block-padding: 1rem;
+$content-padding: 0.5rem;
 $br-sm: 16px;
 
 :root {
@@ -24,10 +27,12 @@ $br-sm: 16px;
 }
 html {
     // font-size: calc(10px + 1vw);
+    
 }
 body {
     // text
     // 还缺字体
+    // width: 1000px;
     font-family: sans-serif;
     font-size: 1.1rem;
     color: $color-secondary;
@@ -42,42 +47,40 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-
+    
     // box
     min-height: 100vh;
-    height: 100vh;
     width: 100%;
-
+    background-color: $color-primary;
+    padding: 3rem 8rem;
+    transform: translateY(-100%) scaleY(0);
     // style
     // transition: var(--transition);
 
     &.sec1 {
-        transform: translateY(0) scaleY(1);
-        background-color: $color-primary;
+        padding: 0 0;
+        // transform: translateY(0) scaleY(1);
+        
     }
     
     &.sec2 {
-        transform: translateY(0) scaleY(1);
-        background-color: rgb(38, 0, 128);
+        // transform: translateY(0) scaleY(1);
     }
     
     &.sec3 {
-        transform: translateY(0) scaleY(1);
-        background-color: rgb(0, 102, 128);
+        // transform: translateY(0) scaleY(1);
     }
     
     &.sec4 {
-        transform: translateY(0) scaleY(1);
-        background-color: rgb(2, 128, 0);
+        // transform: translateY(0) scaleY(1);
     }
     
     &.sec5 {
-        transform: translateY(0) scaleY(1);
-        background-color: rgb(128, 113, 0);
+        // transform: translateY(0) scaleY(1);
     }
 
     &.section.active {
-        z-index: 2;
+        transform: translateY(0) scaleY(1);
     
         animation: slideDown .5s ease-in-out ;
         @keyframes slideDown {
@@ -156,17 +159,18 @@ nav {
 
 .home-content {
     // box-size
-    height: 100%;
+    height: 100vh;
 
     // position
 
     // content
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
+    grid-auto-rows: 100%;
     .home-left{
         // box
         // position: create new stack context
+        
         position: relative;
         
         // content
@@ -213,7 +217,7 @@ nav {
         flex-direction: column;
         justify-content: center;
         padding-right: 5rem;
-        h1 {
+        h2 {
             font-size: 3rem;
             transition: var(--transition);
             span {
@@ -231,7 +235,227 @@ nav {
 
 }
 
+// about
+.about-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: $area-padding;
+    padding-left: $area-padding;
+    
+    .about-right {
+        margin-left: $area-padding;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        h3 {
+            font-size: 2rem;
+            span {
+                color: $color-accent;
+            }
+        }
 
+        p {
+            margin: $block-padding 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .about-left {
+        .about-right-title {
+            font-size: 2rem;
+            margin-bottom: $block-padding;
+            span {
+                color: $color-accent;
+            }
+        }
+        .about-cards {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 12rem);
+            grid-auto-rows: 8rem;
+            grid-gap: $block-padding;
+            .about-item {
+                // box
+                transition: var(--transition);
+                border: 1px solid $color-secondary;
+                background-color: $color-primary;
+                border-radius: $br-sm;
+                padding: $content-padding;
+                box-shadow: 1px 4px 10px black;
+                &:hover {
+                    cursor: default;
+                    transform: translateY(-5px) scale(1.1);
+                    border-color: $color-accent;
+                    box-shadow: 1px 4px 15px black;
+                    z-index: 1;
+                }
+                .abt-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-self: flex-start;
+                    .large-text {
+                        font-size: larger;
+                        font-weight: bolder;
+                    }
+                    .small-text {
+                        position: relative;
+                        padding-left: 1em;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0.1em;
+                            top: 50%;
+                            width: 0.6em;
+                            height: 2px;
+                            background-color: $color-accent;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-skills {
+    margin-top: $area-padding;
+    h3 {
+        text-align: center;
+        font-size: 2rem;
+        span {
+            color: $color-accent;
+        }
+    }
+    .progess-cards {
+        display: grid;
+        padding-top: $block-padding;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $block-padding; 
+        .progress-item {
+            .progress-title {
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .progress-bar {
+                display: flex;
+                align-items: center;
+                .bar-text {
+                    color: lighten($color-secondary, 60%);
+                }
+                .bar-line {
+                    position: relative;
+                    width: 100%;
+                    height: .45rem;
+                    margin-left: $content-padding;
+                    border: 1px solid $color-secondary;
+                    border-radius: .2rem;
+                    span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: $color-accent;
+                        transition: var(--transition);
+                        // width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// portfolio
+.portfolio-text {
+    text-align: center;
+    padding: $area-padding;
+}
+
+.portfolio-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $block-padding;
+    margin-top: $block-padding;
+    .portfolio-item {
+        border-radius: $br-sm;
+        // border: 1px solid $color-ac;
+        position: relative;
+        // overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            // height: 200px;
+            align-self: stretch;
+            border-radius: $br-sm;
+            object-fit: cover;
+        }
+        .project-info {
+            height: 100%;
+            width: 100%;
+            background-color: rgba($color-secondary, $alpha: 0.8);
+            border-radius: $br-sm;
+            color: $color-primary;
+            transform: scale(0);
+            opacity: 0;
+            transition: var(--transition);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h3 {
+                color: $color-accent;
+            }
+            
+            p {
+                margin: $block-padding;
+            }
+
+            .links {
+                display: flex;
+                flex-direction: row;
+
+                a {
+                    // outer box
+                    margin: 0 $content-padding;
+                    text-decoration: none;
+                    height: 2rem;
+                    width: 2rem;
+                    background-color: $color-primary;
+                    color: $color-secondary;
+                    transition: var(--transition);
+                    border-radius: 50%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &:hover {
+                        // background-color: $color-secondary;
+                        color: $color-accent;
+                    }
+                }
+            }
+
+        }
+
+        &:hover .project-info {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+// .portfolio-item:hover .project-info {
+//     opacity: 1;
+//     transform: scale(1);
+// }
 
 // independent components
 .btn-container {
@@ -243,12 +467,11 @@ nav {
     border: 3px solid $color-accent;
     border-radius: 30px;
 
-    
     position: relative;
     // content layout
     display: flex;
     align-items: center;
-    overflow: clip;
+    overflow: hidden;
     // content style
     color: inherit;
     // text-decoration: none;
@@ -276,21 +499,47 @@ nav {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         transform: translateX(100%);
+        width: calc(100% + 3px);
+        height: calc(100% + 3px);
+        border-radius: 30px;
+        background-color: $color-accent;
         transition: var(--transition);
         z-index: -1;
     }
     &:hover {
         &::before {
             transform: translateX(0);
-            width: 100%;
-            height: 100%;
-            background-color: $color-accent;
-
-            border-top-left-radius: 32px;
-            border-bottom-left-radius: 32px;
         }
     }
+}
+
+.main-title {
+    // box
+    // position
+    position: relative;
+    // content
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    
+    padding: 1rem;
+    span {
+        color: $color-accent;
+    }
+    .title-bg {
+        // box
+        // position
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        // content
+        font-size: 6.5rem;
+        font-weight: 800;
+        color: lighten($color-secondary, 81%);
+        
+    }
+    
 }

@@ -24,4 +24,15 @@ function PageTransitions() {
 
 }
 
+function renderProgressBar() {
+    const allProgressBars = document.querySelectorAll(".progress-bar");
+    for (const progressBar of allProgressBars) {
+        const childs = progressBar.children;
+        const p = childs[0];
+        const span = childs[1].firstChild;
+        span.style.width = p.textContent;
+    }
+}
+
 PageTransitions();
+renderProgressBar();
