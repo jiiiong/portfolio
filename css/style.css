@@ -109,6 +109,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
   min-height: 100vh;
   width: 100%;
   background-color: var(--color-primary);
@@ -119,6 +120,7 @@ a {
   padding: 0 0;
 }
 .section.section.active {
+  display: block;
   transform: translateY(0) scaleY(1);
   animation: slideDown 0.5s ease-in-out;
 }
@@ -176,6 +178,7 @@ nav ul a i {
   grid-auto-rows: 100%;
 }
 .home-content .home-left {
+  order: -1;
   position: relative;
   display: flex;
   align-items: center;
@@ -428,10 +431,10 @@ nav ul a i {
   align-items: center;
   justify-content: center;
 }
-.portfolio-cards .portfolio-item .project-info .links a:hover {
+.portfolio-cards .portfolio-item .project-info .links a:hover, .portfolio-cards .portfolio-item .project-info .links a:focus {
   color: var(--color-accent);
 }
-.portfolio-cards .portfolio-item:hover .project-info {
+.portfolio-cards .portfolio-item:hover .project-info, .portfolio-cards .portfolio-item:focus-within .project-info {
   opacity: 1;
   transform: scale(1);
 }
@@ -503,6 +506,7 @@ nav ul a i {
   flex-direction: row;
 }
 .contact-content .contact-left .contact-social a {
+  text-decoration: none;
   margin: 0 1rem;
   padding: 0.5rem;
   border-radius: 50%;
@@ -557,8 +561,7 @@ nav ul a i {
 .btn-container {
   display: flex;
 }
-
-.main-btn {
+.btn-container .main-btn {
   border: 3px solid var(--color-accent);
   border-radius: 30px;
   position: relative;
@@ -569,11 +572,11 @@ nav ul a i {
   text-decoration: none;
   font-weight: 600;
 }
-.main-btn .btn-text {
+.btn-container .main-btn .btn-text {
   padding: 0 0.8rem;
   color: var(--color-secondary);
 }
-.main-btn .btn-icon {
+.btn-container .main-btn .btn-icon {
   padding: 0.5rem;
   border-radius: 50%;
   background-color: var(--color-accent);
@@ -582,21 +585,21 @@ nav ul a i {
   align-items: center;
   justify-content: center;
 }
-.main-btn::before {
+.btn-container .main-btn::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
-  transform: translateX(100%);
-  width: calc(100% + 3px);
-  height: calc(100% + 3px);
+  transform: translateX(100%) translateY(-50%);
+  width: 110%;
+  height: 110%;
   border-radius: 30px;
   background-color: var(--color-accent);
   transition: var(--transition);
   z-index: -1;
 }
-.main-btn:hover::before {
-  transform: translateX(0);
+.btn-container .main-btn:hover::before {
+  transform: translateX(-1px) translateY(-50%);
 }
 
 .main-title {

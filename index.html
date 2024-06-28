@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,66 +13,67 @@
 
     <nav>
         <ul role="list">
-            <li><a href="#home" class="control control-1 actived-btn"
-                 aria-label="home" title="home"
-                 data-id="home">
+            <li>
+                <a href="#home" class="control actived-btn" aria-label="主页" title="主页" data-id="home">
                     <i class="fa-solid fa-house"></i>
-                </a></li>
-            <li><a href="#portfolio" class="control control-2" 
-                    aria-label="portfolio" title="portfolio" 
-                    data-id="portfolio">
+                </a>
+            </li>
+            <li>
+                <a href="#portfolio" class="control" aria-label="我的作品集" title="我的作品集" data-id="portfolio">
                     <i class="fa-solid fa-briefcase"></i>
-                </a></li>
-            <li><a href="#blogs" class="control control-3" 
-                 aria-label="blogs" title="blogs"
-                 data-id="blogs">
-                <i class="fa-solid fa-blog"></i>
-                </a></li>
-            <li><a href="#about" class="control control-4"
-                 aria-label="about" title="about"
-                 data-id="about">
+                </a>
+            </li>
+            <li>
+                <a href="#blogs" class="control" aria-label="我的博客" title="我的博客" data-id="blogs">
+                    <i class="fa-solid fa-blog"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#about" class="control" aria-label="相关信息" title="相关信息" data-id="about">
                     <i class="fa-solid fa-circle-info"></i>
-                </a></li>
-            <li><a href="#contact" class="control control-5" 
-                 aria-label="contact" title="contact"
-                 data-id="contact">
-                 <i class="fa-solid fa-envelope"></i>
-                </a></li>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="control" aria-label="联系我" title="联系我" data-id="contact">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </li>
         </ul>
     </nav>
 
     <main>
-        <section class="section sec1 header active" id="home">
+        <section class="section sec1 active" id="home">
             <div class="home-content">
-                <div class="home-left">
-                    <div class="hero-shape"></div>
-                    <div class="hero">
-                        <img src="images/hero.png" alt="picture of Tianjiong Zhang">
-                    </div>
-                </div>
                 <div class="home-right">
                     <h2>
                         <span>张天炯</span>的个人网站
                     </h2>
                     <p>这里是张天炯的个人网站；<br />用以练习前端技能，分享所思所想。</p>
                     <div class="btn-container">
-                        <a class="main-btn" href="#">
+                        <a class="main-btn" href="">
                             <span class="btn-text">下载简历</span>
                             <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
                         </a> 
                     </div>
-                    
+                </div>
+                <div class="home-left">
+                    <div class="hero-shape"></div>
+                    <div class="hero">
+                        <img src="images/hero.png" alt="张天炯的照片">
+                    </div>
                 </div>
             </div>
+            
+
         </section>
-        <section class="section sec2 portfolio" id="portfolio">
+        <section class="section sec2" id="portfolio">
             <h2 class="main-title">我的<span>作品集</span><span class="title-bg" aria-hidden="true">PORTFOLIO</span>
             </h2>
             <p class="portfolio-text">
                 这里展示了一些我所做的项目 
             </p>
             <div class="portfolio-cards">
-                <div class="portfolio-item">
+                <div class="portfolio-item" tabindex="0">
                     <div class="project-info">
                         <h3>华为2024软挑</h3>
                         <p>杭夏赛区复赛二等奖</p>
@@ -83,7 +84,7 @@
                     </div>
                     <img src="/images/project1.png" alt="poster of huawei software challenges">
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" tabindex="0">
                     <div class="project-info">
                         <h3>个人网站</h3>
                         <p></p>
@@ -94,7 +95,7 @@
                     </div>
                     <img src="/images/project2.png" alt="screen shot of my personal website">
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" tabindex="0">
                     <div class="project-info">
                         <h3>寒武纪自动化移植</h3>
                         <p>针对寒武纪芯片自动化移植不同框架的深度学习模型</p>
@@ -105,7 +106,7 @@
                     </div>
                     <img src="/images/project3.png" alt="poster of huawei software challenges">
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" tabindex="0">
                     <div class="project-info">
                         <h3>华为2024软挑</h3>
                         <p>杭夏赛区复赛二等奖</p>
@@ -116,7 +117,7 @@
                     </div>
                     <img src="/images/project1.png" alt="poster of huawei software challenges">
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" tabindex="0">
                     <div class="project-info">
                         <h3>华为2024软挑</h3>
                         <p>杭夏赛区复赛二等奖</p>
@@ -127,7 +128,7 @@
                     </div>
                     <img src="/images/project1.png" alt="poster of huawei software challenges">
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" tabindex="0">
                     <div class="project-info">
                         <h3>华为2024软挑</h3>
                         <p>杭夏赛区复赛二等奖</p>
@@ -140,47 +141,47 @@
                 </div>
             </div>
         </section>
-        <section class="section sec3 blogs " id="blogs" >
+        <section class="section sec3 " id="blogs" >
             <h2 class="main-title">我的<span>博客</span><span class="title-bg" aria-hidden="true">BLOGS</h2>
-                <div class="blog-cards">
-                    <div class="blog-item">
-                        <div class="blog-info">
-                            <h3>blog-title</h3>
-                            <p>main text body</p>
-                        </div>
-                        <img src="images/cat.jpg" alt="a cat" />
+            <div class="blog-cards">
+                <div class="blog-item">
+                    <div class="blog-info">
+                        <h3>标题</h3>
+                        <p>正文内容</p>
                     </div>
-                    <div class="blog-item">
-                        <div class="blog-info">
-                            <h3>blog-title</h3>
-                            <p>main text body</p>
-                        </div>
-                        <img src="images/cat.jpg" alt="a cat" />
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-info">
-                            <h3>blog-title</h3>
-                            <p>main text body</p>
-                        </div>
-                        <img src="images/cat.jpg" alt="a cat" />
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-info">
-                            <h3>blog-title</h3>
-                            <p>main text body</p>
-                        </div>
-                        <img src="images/cat.jpg" alt="a cat" />
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-info">
-                            <h3>blog-title</h3>
-                            <p>main text body</p>
-                        </div>
-                        <img src="images/cat.jpg" alt="a cat" />
-                    </div>
+                    <img src="images/cat.jpg" alt="a cat" />
                 </div>
+                <div class="blog-item">
+                    <div class="blog-info">
+                        <h3>blog-title</h3>
+                        <p>main text body</p>
+                    </div>
+                    <img src="images/cat.jpg" alt="a cat" />
+                </div>
+                <div class="blog-item">
+                    <div class="blog-info">
+                        <h3>blog-title</h3>
+                        <p>main text body</p>
+                    </div>
+                    <img src="images/cat.jpg" alt="a cat" />
+                </div>
+                <div class="blog-item">
+                    <div class="blog-info">
+                        <h3>blog-title</h3>
+                        <p>main text body</p>
+                    </div>
+                    <img src="images/cat.jpg" alt="a cat" />
+                </div>
+                <div class="blog-item">
+                    <div class="blog-info">
+                        <h3>blog-title</h3>
+                        <p>main text body</p>
+                    </div>
+                    <img src="images/cat.jpg" alt="a cat" />
+                </div>
+            </div>
         </section>
-        <section class="section sec4 about " id="about">
+        <section class="section sec4 " id="about">
             <h2 class="main-title">相关<span>信息</span><span class="title-bg" aria-hidden="true">ABOUT</span>
             </h2>
             <div class="about-content">
@@ -198,8 +199,8 @@
                             <div class="abt-text">
                                 <p class="large-text">Accessibility</p>
                                 <p class="small-text">语义 HTML</p>
-                                <p class="small-text">ARIA</p>
                                 <p class="small-text">Test with NVDA</p>
+                                <p class="small-text">键盘可达</p>
                             </div>
                         </div>
                         <div class="about-item">
@@ -269,12 +270,11 @@
             <div class="about-timeline">
                 <div class="timeline-grid">
                     <div class="timeline-item">
-
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section sec5 contact" id="contact">
+        <section class="section sec5" id="contact">
             <h2 class="main-title">
                 <span>联系</span>我<span class="title-bg" aria-hidden="true">CONTACT</span>
             </h2>
@@ -282,7 +282,7 @@
                 <div class="contact-left">
                     <h3>联系方式</h3>
                     <p>请通过以下信息联系我：</p>
-                    <ul class="contact-info" role="list" aria-label="personal info">
+                    <ul class="contact-info" role="list" aria-label="个人信息">
                         <li class="contact-info-item">
                             <span class="contact-info-item-icon">
                                 <i class="fa-solid fa-location-dot"></i>
@@ -339,10 +339,10 @@
                         </section>
                         <section>
                             <button class="btn-container">
-                                <a class="main-btn" href="#">
+                                <div class="main-btn">
                                     <span class="btn-text">发送邮件</span>
                                     <span class="btn-icon"><i class="fa-regular fa-envelope"></i></span>
-                                </a> 
+                                </div> 
                             </button>
                         </section> 
                     </form>
@@ -351,7 +351,7 @@
         </section>
     </main>
 
-    <button class="theme-control">
+    <button class="theme-control" title="切换白天/黑夜主题">
         <i class="fa-solid fa-circle-half-stroke"></i>
     </button>
 
