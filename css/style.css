@@ -78,12 +78,27 @@ textarea:not([rows]) {
   --transition: all .3s ease-in-out;
   --inner-padding: 0.5rem;
   --nav-inner-margin: 0.4rem;
+  --color-primary: #F9F9f9;
+  --color-secondary: #0e1e23;
+  --color-secondary-rgb: 14, 30, 35;
+  --color-secondary-lighted: #c9e0e7;
+  --color-accent: #ee4865;
+  --color-accent-lighted: #f591a3;
 }
 
 body {
   font-family: sans-serif;
   font-size: 1.1rem;
-  color: #0e1e23;
+  color: var(--color-secondary);
+}
+
+.dark-mode {
+  --color-primary: #191d2b;
+  --color-secondary: white;
+  --color-secondary-rgb: 255, 255, 255;
+  --color-secondary-lighted: #333333;
+  --color-accent: #27ae60;
+  --color-accent-lighted: #52be80;
 }
 
 a {
@@ -96,7 +111,7 @@ a {
   left: 0;
   min-height: 100vh;
   width: 100%;
-  background-color: #F9F9f9;
+  background-color: var(--color-primary);
   padding: 3rem 8rem;
   transform: translateY(-100%) scaleY(0);
 }
@@ -136,11 +151,11 @@ nav ul a {
   height: var(--var-tab-size);
   border-radius: 40%;
   border: 0;
-  background-color: #0e1e23;
+  background-color: var(--color-secondary);
   box-shadow: var(--box-shadow-1);
   transition: var(--transition);
   text-decoration-line: none;
-  color: #F9F9f9;
+  color: var(--color-primary);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -148,7 +163,7 @@ nav ul a {
   overflow: hidden;
 }
 nav ul a:hover, nav ul a.actived-btn {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 nav ul a i {
   font-size: calc(var(--var-tab-size) * 0.5);
@@ -172,7 +187,7 @@ nav ul a i {
   z-index: -1;
   width: 65%;
   height: 100%;
-  background-color: #0e1e23;
+  background-color: var(--color-secondary);
   -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
           clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
 }
@@ -180,7 +195,7 @@ nav ul a i {
   border-radius: 16px;
   width: 68%;
   margin-left: 10%;
-  background-color: #f7a5b4;
+  background-color: var(--color-accent-lighted);
   overflow: hidden;
 }
 .home-content .home-left .hero img {
@@ -203,7 +218,7 @@ nav ul a i {
   transition: var(--transition);
 }
 .home-content .home-right h2 span {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .home-content .home-right p {
   margin: 1.5rem 0;
@@ -227,7 +242,7 @@ nav ul a i {
   font-size: 2rem;
 }
 .about-content .about-right h3 span {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .about-content .about-right p {
   margin: 1rem 0;
@@ -240,7 +255,7 @@ nav ul a i {
   margin-bottom: 1rem;
 }
 .about-content .about-left .about-right-title span {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .about-content .about-left .about-cards {
   position: relative;
@@ -251,8 +266,8 @@ nav ul a i {
 }
 .about-content .about-left .about-cards .about-item {
   transition: var(--transition);
-  border: 1px solid #0e1e23;
-  background-color: #F9F9f9;
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-primary);
   border-radius: 16px;
   padding: 0.5rem;
   box-shadow: 1px 4px 10px black;
@@ -260,7 +275,7 @@ nav ul a i {
 .about-content .about-left .about-cards .about-item:hover {
   cursor: default;
   transform: translateY(-5px) scale(1.1);
-  border-color: #ee4865;
+  border-color: var(--color-accent);
   box-shadow: 1px 4px 15px black;
   z-index: 1;
 }
@@ -284,7 +299,7 @@ nav ul a i {
   top: 50%;
   width: 0.6em;
   height: 2px;
-  background-color: #ee4865;
+  background-color: var(--color-accent);
 }
 
 .about-skills {
@@ -297,11 +312,11 @@ nav ul a i {
   position: relative;
 }
 .about-skills h3 span {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .about-skills h3::before {
   content: "";
-  background-color: #d9eaf0;
+  background-color: var(--color-secondary-lighted);
   height: 2px;
   width: 40%;
   position: absolute;
@@ -324,14 +339,14 @@ nav ul a i {
   align-items: center;
 }
 .about-skills .progess-cards .progress-item .progress-bar .bar-text {
-  color: #90c3d3;
+  color: var(--color-secondary);
 }
 .about-skills .progess-cards .progress-item .progress-bar .bar-line {
   position: relative;
   width: 100%;
   height: 0.45rem;
   margin-left: 0.5rem;
-  border: 1px solid #0e1e23;
+  border: 1px solid var(--color-secondary);
   border-radius: 0.2rem;
 }
 .about-skills .progess-cards .progress-item .progress-bar .bar-line span {
@@ -339,7 +354,7 @@ nav ul a i {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #ee4865;
+  background-color: var(--color-accent);
   transition: var(--transition);
 }
 
@@ -371,9 +386,9 @@ nav ul a i {
 .portfolio-cards .portfolio-item .project-info {
   height: 100%;
   width: 100%;
-  background-color: rgba(14, 30, 35, 0.8);
+  background-color: rgb(var(--color-secondary-rgb), 0.8);
   border-radius: 16px;
-  color: #F9F9f9;
+  color: var(--color-primary);
   transform: scale(0);
   opacity: 0;
   transition: var(--transition);
@@ -387,7 +402,7 @@ nav ul a i {
   text-align: center;
 }
 .portfolio-cards .portfolio-item .project-info h3 {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .portfolio-cards .portfolio-item .project-info p {
   padding: 1rem;
@@ -405,8 +420,8 @@ nav ul a i {
   text-decoration: none;
   height: 2rem;
   width: 2rem;
-  background-color: #F9F9f9;
-  color: #0e1e23;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
   transition: var(--transition);
   border-radius: 50%;
   display: flex;
@@ -414,7 +429,7 @@ nav ul a i {
   justify-content: center;
 }
 .portfolio-cards .portfolio-item .project-info .links a:hover {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .portfolio-cards .portfolio-item:hover .project-info {
   opacity: 1;
@@ -429,9 +444,9 @@ nav ul a i {
 }
 .blog-cards .blog-item {
   position: relative;
-  background-color: #d9eaf0;
+  background-color: var(--color-secondary-lighted);
   border-radius: 16px;
-  box-shadow: 1px 1px 10px #0e1e23;
+  box-shadow: 1px 1px 10px var(--color-secondary);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
@@ -447,17 +462,96 @@ nav ul a i {
 }
 .blog-cards .blog-item .blog-info {
   padding: 0.5rem;
-  border-top: 3px solid #ee4865;
+  border-top: 3px solid var(--color-accent);
 }
 .blog-cards .blog-item .blog-info h3 {
   text-align: left;
   transition: var(--transition);
 }
 .blog-cards .blog-item:hover {
-  box-shadow: 1px 1px 10px #ee4865;
+  box-shadow: 1px 1px 10px var(--color-accent);
 }
 .blog-cards .blog-item:hover h3 {
-  color: #ee4865;
+  color: var(--color-accent);
+}
+
+.contact-content {
+  padding-top: 2rem;
+  display: flex;
+}
+.contact-content .contact-left {
+  flex: 2;
+}
+.contact-content .contact-left h3 {
+  color: var(--color-accent);
+}
+.contact-content .contact-left p {
+  margin: 1rem 0;
+}
+.contact-content .contact-left .contact-info .contact-info-item {
+  display: flex;
+}
+.contact-content .contact-left .contact-info .contact-info-item .contact-info-item-icon {
+  width: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-content .contact-left .contact-social {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+.contact-content .contact-left .contact-social a {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  transition: var(--transition);
+}
+.contact-content .contact-left .contact-social a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+.contact-content .contact-right {
+  flex: 3;
+  margin-left: 2rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.contact-content .contact-right h3 span {
+  color: var(--color-accent);
+}
+.contact-content .contact-right .form-control {
+  margin: 1rem 0;
+  display: flex;
+}
+.contact-content .contact-right .form-control label {
+  text-wrap: nowrap;
+}
+.contact-content .contact-right .form-control input, .contact-content .contact-right .form-control textarea {
+  border-radius: 16px;
+  padding: 0 0.8em;
+  outline: none;
+  width: 100%;
+  background-color: var(--color-primary);
+  resize: none;
+  color: var(--color-secondary);
+}
+.contact-content .contact-right form section:last-child {
+  display: flex;
+  justify-content: center;
+}
+.contact-content .contact-right form section:last-child button {
+  border: none;
+  background-color: inherit;
 }
 
 .btn-container {
@@ -465,22 +559,24 @@ nav ul a i {
 }
 
 .main-btn {
-  border: 3px solid #ee4865;
+  border: 3px solid var(--color-accent);
   border-radius: 30px;
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: inherit;
+  text-decoration: none;
   font-weight: 600;
 }
 .main-btn .btn-text {
   padding: 0 0.8rem;
+  color: var(--color-secondary);
 }
 .main-btn .btn-icon {
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #ee4865;
+  background-color: var(--color-accent);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -495,7 +591,7 @@ nav ul a i {
   width: calc(100% + 3px);
   height: calc(100% + 3px);
   border-radius: 30px;
-  background-color: #ee4865;
+  background-color: var(--color-accent);
   transition: var(--transition);
   z-index: -1;
 }
@@ -511,7 +607,7 @@ nav ul a i {
   padding: 1rem;
 }
 .main-title span {
-  color: #ee4865;
+  color: var(--color-accent);
 }
 .main-title .title-bg {
   position: absolute;
@@ -521,5 +617,26 @@ nav ul a i {
   z-index: -1;
   font-size: 6.5rem;
   font-weight: 800;
-  color: #ddecf1;
+  color: var(--color-secondary-lighted);
+}
+
+.theme-control {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  position: fixed;
+  z-index: 10;
+  top: 5%;
+  right: 3%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.theme-control:active {
+  transform: translateY(-5px);
+}
+.theme-control i {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */

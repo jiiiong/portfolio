@@ -42,7 +42,7 @@
     </nav>
 
     <main>
-        <section class="section sec1 header " id="home">
+        <section class="section sec1 header active" id="home">
             <div class="home-content">
                 <div class="home-left">
                     <div class="hero-shape"></div>
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </section>
-        <section class="section sec3 blogs active" id="blogs" >
+        <section class="section sec3 blogs " id="blogs" >
             <h2 class="main-title">我的<span>博客</span><span class="title-bg" aria-hidden="true">BLOGS</h2>
                 <div class="blog-cards">
                     <div class="blog-item">
@@ -274,8 +274,86 @@
                 </div>
             </div>
         </section>
-        <section class="section sec5 contact" id="contact"></section>
+        <section class="section sec5 contact" id="contact">
+            <h2 class="main-title">
+                <span>联系</span>我<span class="title-bg" aria-hidden="true">CONTACT</span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-left">
+                    <h3>联系方式</h3>
+                    <p>请通过以下信息联系我：</p>
+                    <ul class="contact-info" role="list" aria-label="personal info">
+                        <li class="contact-info-item">
+                            <span class="contact-info-item-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                                地址：杭州电子科技大学
+                        </li>
+                        <li class="contact-info-item">
+                            <span class="contact-info-item-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                                邮箱：z.991129@outlook.com
+                        </li>
+                        <li class="contact-info-item">
+                            <span class="contact-info-item-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                                邮箱：z.991129@outlook.com
+                        </li>
+                    </ul>
+                    <ul class="contact-social" role="list" aria-label="links to my social media homepage">
+                        <li>
+                            <a href="https://github.com/jiiiong" aria-label="github"><i class="fa-brands fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="" aria-label="twitter"><i class="fa-brands fa-x-twitter" target="_blank"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://space.bilibili.com/35173739" aria-label="bilibili" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-right">
+                    <h3><span>邮件</span>联系</h3>
+                    <form action="" class="contact-form">
+                        <section>
+                            <p class="form-control">
+                                <label for="contact-name">你的名字：</label>
+                                <input type="text" required placeholder="张三" id="contact-name"><br />
+                            </p>
+                            <p class="form-control">
+                                <label for="contact-email">你的邮箱：</label>
+                                <input type="email" required placeholder="abc123@qq.com" id="contact-email">
+                            </p>
+                        </section>
+                        <section>
+                            <p class="form-control">
+                                <label for="email-subject">邮件主题：</label>
+                                <input type="text" required placeholder="主题" id="email-subject">
+                            </p>
+                            <p class="form-control">
+                                <label for="email-content">邮件内容：</label>
+                                <textarea name="" id="email-content" placeholder="邮件内容"></textarea>
+                            </p>
+                        </section>
+                        <section>
+                            <button class="btn-container">
+                                <a class="main-btn" href="#">
+                                    <span class="btn-text">发送邮件</span>
+                                    <span class="btn-icon"><i class="fa-regular fa-envelope"></i></span>
+                                </a> 
+                            </button>
+                        </section> 
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <button class="theme-control">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
 
     <script src="app.js"></script>
 </body>

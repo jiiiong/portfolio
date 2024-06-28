@@ -36,3 +36,9 @@ function renderProgressBar() {
 
 PageTransitions();
 renderProgressBar();
+
+const themeControl = document.querySelector(".theme-control");
+themeControl.addEventListener("click", () => {
+    let element = document.body;
+    element.classList.toggle('dark-mode');
+});

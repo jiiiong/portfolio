@@ -1,10 +1,5 @@
 @use 'reset';
 
-// 颜色方案
-$color-primary: #F9F9f9;
-$color-secondary: #0e1e23;
-$color-accent: #ee4865;
-
 // $color-primary: #e3f9fd;
 // $color-secondary: #0e1e23;
 // $color-accent: #0b3289;
@@ -24,18 +19,38 @@ $br-sm: 16px;
     // 统一整个页面的 negative space，
     --inner-padding: 0.5rem;
     --nav-inner-margin: 0.4rem;
+
+    // 颜色方案
+    --color-primary: #F9F9f9;
+    --color-secondary: #0e1e23;
+    --color-secondary-rgb: 14, 30, 35;
+    --color-secondary-lighted:  #c9e0e7;
+    --color-accent: #ee4865;
+    --color-accent-lighted: #f591a3; // 40
 }
+
 html {
     // font-size: calc(10px + 1vw);
     
 }
+
 body {
     // text
     // 还缺字体
     // width: 1000px;
     font-family: sans-serif;
     font-size: 1.1rem;
-    color: $color-secondary;
+    color: var(--color-secondary);
+}
+
+.dark-mode {
+    // 颜色方案
+    --color-primary: #191d2b;
+    --color-secondary: white;
+    --color-secondary-rgb:  255, 255, 255;
+    --color-secondary-lighted:  #333333;
+    --color-accent: #27ae60;
+    --color-accent-lighted: #52be80; // 40
 }
 
 a {
@@ -51,7 +66,7 @@ a {
     // box
     min-height: 100vh;
     width: 100%;
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     padding: 3rem 8rem;
     transform: translateY(-100%) scaleY(0);
     // style
@@ -126,13 +141,13 @@ nav {
             border-radius: 40%;
             border: 0;
             
-            background-color: $color-secondary;
+            background-color: var(--color-secondary);
             box-shadow: var(--box-shadow-1);
             
             // style
             transition: var(--transition);
             text-decoration-line: none;
-            color: $color-primary;
+            color: var(--color-primary);
 
             // content layout
             display: flex;
@@ -143,7 +158,7 @@ nav {
 
             &:hover,
             &.actived-btn {
-                color: $color-accent;
+                color: var(--color-accent);
                 // background-color: lighten($color-secondary, %);
                 // color: lighten($color-text, 20%);
             }
@@ -185,7 +200,7 @@ nav {
             // box-size
             width: 65%;
             height: 100%;
-            background-color: $color-secondary;
+            background-color: var(--color-secondary);
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
         }
 
@@ -195,10 +210,10 @@ nav {
             border-radius: $br-sm;
             width: 68%;
             margin-left: 10%;
-            background-color: lighten($color-accent, 20%);
+            background-color: var(--color-accent-lighted);
+            // filter: brightness(1.2);
             // background-color: rgb(242, 167, 179);
             overflow: hidden;
-            
             
             img {
                 object-fit: cover;
@@ -221,7 +236,7 @@ nav {
             font-size: 3rem;
             transition: var(--transition);
             span {
-                color: $color-accent;
+                color: var(--color-accent);
             }
         }
         p {
@@ -250,7 +265,7 @@ nav {
         h3 {
             font-size: 2rem;
             span {
-                color: $color-accent;
+                color: var(--color-accent);
             }
         }
 
@@ -268,7 +283,7 @@ nav {
             font-size: 2rem;
             margin-bottom: $block-padding;
             span {
-                color: $color-accent;
+                color: var(--color-accent);
             }
         }
         .about-cards {
@@ -280,15 +295,15 @@ nav {
             .about-item {
                 // box
                 transition: var(--transition);
-                border: 1px solid $color-secondary;
-                background-color: $color-primary;
+                border: 1px solid var(--color-secondary);
+                background-color: var(--color-primary);
                 border-radius: $br-sm;
                 padding: $content-padding;
                 box-shadow: 1px 4px 10px black;
                 &:hover {
                     cursor: default;
                     transform: translateY(-5px) scale(1.1);
-                    border-color: $color-accent;
+                    border-color: var(--color-accent);
                     box-shadow: 1px 4px 15px black;
                     z-index: 1;
                 }
@@ -310,7 +325,7 @@ nav {
                             top: 50%;
                             width: 0.6em;
                             height: 2px;
-                            background-color: $color-accent;
+                            background-color: var(--color-accent);
                         }    
                     }
                 }
@@ -326,13 +341,13 @@ nav {
         text-align: center;
         font-size: 2rem;
         span {
-            color: $color-accent;
+            color: var(--color-accent);
         }
         position: relative;
 
         &::before {
             content: "";
-            background-color: lighten($color-secondary, 80%);
+            background-color: var(--color-secondary-lighted);
             height: 2px;
             width: 40%;
 
@@ -358,21 +373,21 @@ nav {
                 display: flex;
                 align-items: center;
                 .bar-text {
-                    color: lighten($color-secondary, 60%);
+                    color: var(--color-secondary);
                 }
                 .bar-line {
                     position: relative;
                     width: 100%;
                     height: .45rem;
                     margin-left: $content-padding;
-                    border: 1px solid $color-secondary;
+                    border: 1px solid var(--color-secondary);
                     border-radius: .2rem;
                     span {
                         position: absolute;
                         top: 0;
                         left: 0;
                         height: 100%;
-                        background-color: $color-accent;
+                        background-color: var(--color-accent);
                         transition: var(--transition);
                         // width: 90%;
                     }
@@ -411,9 +426,9 @@ nav {
         .project-info {
             height: 100%;
             width: 100%;
-            background-color: rgba($color-secondary, $alpha: 0.8);
+            background-color: rgb(var(--color-secondary-rgb),0.8 );
             border-radius: $br-sm;
-            color: $color-primary;
+            color: var(--color-primary);
             transform: scale(0);
             opacity: 0;
             transition: var(--transition);
@@ -429,7 +444,7 @@ nav {
             text-align: center;
 
             h3 {
-                color: $color-accent;
+                color: var(--color-accent);
             }
             
             p {
@@ -450,8 +465,8 @@ nav {
                     text-decoration: none;
                     height: 2rem;
                     width: 2rem;
-                    background-color: $color-primary;
-                    color: $color-secondary;
+                    background-color: var(--color-primary);
+                    color: var(--color-secondary);
                     transition: var(--transition);
                     border-radius: 50%;
 
@@ -460,7 +475,7 @@ nav {
                     justify-content: center;
                     &:hover {
                         // background-color: $color-secondary;
-                        color: $color-accent;
+                        color: var(--color-accent);
                     }
                 }
             }
@@ -483,10 +498,10 @@ nav {
     
     .blog-item {
         position: relative;
-        background-color: lighten($color-secondary, 80%);
+        background-color: var(--color-secondary-lighted);
         // padding: $block-padding;
         border-radius: $br-sm;
-        box-shadow: 1px 1px 10px $color-secondary;
+        box-shadow: 1px 1px 10px var(--color-secondary);
         transition: var(--transition);
         display: flex;
         flex-direction: column;
@@ -502,7 +517,7 @@ nav {
         .blog-info {
             // order: 0;
             padding: $content-padding;
-            border-top: 3px solid $color-accent;
+            border-top: 3px solid var(--color-accent);
             h3 {
                 text-align: left;
                 transition: var(--transition);
@@ -510,13 +525,103 @@ nav {
         }
 
         &:hover {
-            box-shadow: 1px 1px 10px $color-accent;
+            box-shadow: 1px 1px 10px var(--color-accent);
             h3 {
-                color: $color-accent;
+                color: var(--color-accent);
             }
         }
     }
 }
+
+// contact
+.contact-content {
+    padding-top: $area-padding;
+    display: flex;
+    .contact-left {
+        flex: 2;
+        h3 {
+            color: var(--color-accent);
+        }
+        p {
+            margin: $block-padding 0;
+        }
+        .contact-info {
+            .contact-info-item {
+                display: flex;
+                .contact-info-item-icon {
+                    width: 1.5em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                    // padding: $content-padding;}
+            }
+        }
+
+        .contact-social {
+            
+            margin-top: $area-padding;
+
+            display: flex;
+            flex-direction: row;
+            // justify-content: space-evenly;
+            a {
+                margin: 0 $block-padding;
+                padding: $content-padding;
+                border-radius: 50%;
+                border: 1px solid var(--color-accent);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                transition: var(--transition);
+                &:hover {
+                    background-color: var(--color-accent);
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+    .contact-right {
+        flex: 3;
+        margin-left: $area-padding;
+        padding: 0 $block-padding;
+        display: flex;
+        flex-direction: column;
+        h3 span {
+            color: var(--color-accent);
+        }
+        .form-control {
+            margin: $block-padding 0 ;
+            display: flex;
+            // justify-content: space-around;
+            label {
+                text-wrap: nowrap;
+            }
+            input, textarea{
+                border-radius: $br-sm;
+                padding: 0 .8em;
+                outline: none;
+                width: 100%;
+                background-color: var(--color-primary);
+                resize: none;
+                color: var(--color-secondary);
+            }
+        }
+        form section:last-child {
+            button{
+                border: none;
+                background-color: inherit;
+            }
+            // background-color: #0e1e23;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
 
 // independent components
 .btn-container {
@@ -525,7 +630,7 @@ nav {
 .main-btn {
     
     // box
-    border: 3px solid $color-accent;
+    border: 3px solid var(--color-accent);
     border-radius: 30px;
 
     position: relative;
@@ -535,19 +640,20 @@ nav {
     overflow: hidden;
     // content style
     color: inherit;
-    // text-decoration: none;
+    text-decoration: none;
     
     font-weight: 600;
 
     .btn-text {
         padding: 0 .8rem;
+        color: var(--color-secondary)
     }
 
     .btn-icon {
         // box
         padding: .5rem;
         border-radius: 50%;
-        background-color: $color-accent;
+        background-color: var(--color-accent);
         overflow: hidden;
 
         display: flex;
@@ -564,7 +670,7 @@ nav {
         width: calc(100% + 3px);
         height: calc(100% + 3px);
         border-radius: 30px;
-        background-color: $color-accent;
+        background-color: var(--color-accent);
         transition: var(--transition);
         z-index: -1;
     }
@@ -586,7 +692,7 @@ nav {
     
     padding: 1rem;
     span {
-        color: $color-accent;
+        color: var(--color-accent);
     }
     .title-bg {
         // box
@@ -599,8 +705,30 @@ nav {
         // content
         font-size: 6.5rem;
         font-weight: 800;
-        color: lighten($color-secondary, 81%);
+        color: var(--color-secondary-lighted);
         
     }
     
+}
+
+.theme-control {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+
+    position: fixed;
+    z-index: 10;
+    top: 5%;
+    right: 3%;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    &:active {
+        transform: translateY(-5px);
+    }
+    i {
+        pointer-events: none;
+    }
 }
