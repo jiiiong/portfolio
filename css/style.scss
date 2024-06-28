@@ -41,6 +41,7 @@ body {
     font-family: sans-serif;
     font-size: 1.1rem;
     color: var(--color-secondary);
+    outline: var(--color-accent);
 }
 
 .dark-mode {
@@ -511,7 +512,8 @@ nav {
             }
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             box-shadow: 1px 1px 10px var(--color-accent);
             h3 {
                 color: var(--color-accent);

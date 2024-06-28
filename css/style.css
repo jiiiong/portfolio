@@ -90,6 +90,7 @@ body {
   font-family: sans-serif;
   font-size: 1.1rem;
   color: var(--color-secondary);
+  outline: var(--color-accent);
 }
 
 .dark-mode {
@@ -471,10 +472,10 @@ nav ul a i {
   text-align: left;
   transition: var(--transition);
 }
-.blog-cards .blog-item:hover {
+.blog-cards .blog-item:hover, .blog-cards .blog-item:focus {
   box-shadow: 1px 1px 10px var(--color-accent);
 }
-.blog-cards .blog-item:hover h3 {
+.blog-cards .blog-item:hover h3, .blog-cards .blog-item:focus h3 {
   color: var(--color-accent);
 }
 
