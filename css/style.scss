@@ -1,4 +1,5 @@
 @use 'reset';
+@use 'md' as md;
 
 // $color-primary: #e3f9fd;
 // $color-secondary: #0e1e23;
@@ -21,12 +22,53 @@ $br-sm: 16px;
     --nav-inner-margin: 0.4rem;
 
     // 颜色方案
-    --color-primary: #F9F9f9;
-    --color-secondary: #0e1e23;
+    --color-surface: #{md.$md-sys-color-surface};
+    --color-on-surface: #{md.$md-sys-color-on-surface};
+    --color-surface-variant: #{md.$md-sys-color-surface-variant};
+    --color-on-surface-variant: #{md.$md-sys-color-on-surface-variant};
+
     --color-secondary-rgb: 14, 30, 35;
     --color-secondary-lighted:  #c9e0e7;
-    --color-accent: #ee4865;
-    --color-accent-lighted: #f591a3; // 40
+
+    --color-primary: #{md.$md-sys-color-primary};
+    --color-on-primary: #{md.$md-sys-color-on-primary};
+    --color-primary-container: #{md.$md-sys-color-primary-container};
+    --color-on-primary-container: #{md.$md-sys-color-on-primary-container};
+    
+    --color-secondary: #{md.$md-sys-color-secondary};
+    --color-on-secondary: #{md.$md-sys-color-on-secondary};
+    --color-secondary-container: #{md.$md-sys-color-secondary-container};
+    --color-on-secondary-container: #{md.$md-sys-color-on-secondary-container};
+    
+    --color-outline: #{md.$md-sys-color-outline};
+
+    --color-inverse-surface: #{md.$md-sys-color-inverse-surface};
+    --color-inverse-on-surface: #{md.$md-sys-color-inverse-on-surface};
+    --color-inverse-primary: #{md.$md-sys-color-inverse-primary};
+
+    .dark-mode {
+        // 颜色方案
+        --color-surface: #{md.$md-sys-color-surface-dark};
+        --color-on-surface: #{md.$md-sys-color-on-surface-dark};
+        --color-surface-variant: #{md.$md-sys-color-surface-variant-dark};
+        --color-on-surface-variant: #{md.$md-sys-color-on-surface-variant-dark};
+    
+        --color-primary: #{md.$md-sys-color-primary-dark};
+        --color-on-primary: #{md.$md-sys-color-on-primary-dark};
+        --color-primary-container: #{md.$md-sys-color-primary-container-dark};
+        --color-on-primary-container: #{md.$md-sys-color-on-primary-container-dark};
+        
+        --color-secondary: #{md.$md-sys-color-secondary-dark};
+        --color-on-secondary: #{md.$md-sys-color-on-secondary-dark};
+        --color-secondary-container: #{md.$md-sys-color-secondary-container-dark};
+        --color-on-secondary-container: #{md.$md-sys-color-on-secondary-container-dark};
+        
+        --color-outline: #{md.$md-sys-color-outline-dark};
+    
+        --color-inverse-surface: #{md.$md-sys-color-inverse-surface-dark};
+        --color-inverse-on-surface: #{md.$md-sys-color-inverse-on-surface-dark};
+        --color-inverse-primary: #{md.$md-sys-color-inverse-primary-dark};
+    }
 }
 
 html {
@@ -40,18 +82,9 @@ body {
     // width: 1000px;
     font-family: sans-serif;
     font-size: 1.1rem;
-    color: var(--color-secondary);
-    outline: var(--color-accent);
-}
-
-.dark-mode {
-    // 颜色方案
-    --color-primary: #191d2b;
-    --color-secondary: white;
-    --color-secondary-rgb:  255, 255, 255;
-    --color-secondary-lighted:  #333333;
-    --color-accent: #27ae60;
-    --color-accent-lighted: #52be80; // 40
+    color: var(--color-on-surface);
+    outline: var(--color-primary);
+    background-color: var(--color-surface);
 }
 
 a {
@@ -67,7 +100,7 @@ a {
     // box
     min-height: 100vh;
     width: 100%;
-    background-color: var(--color-primary);
+    background-color: var(--color-surface);
     padding: 3rem 8rem;
     transform: translateY(-100%) scaleY(0);
     // style
@@ -128,12 +161,13 @@ nav {
             border: 0;
             
             background-color: var(--color-secondary);
+            
             box-shadow: var(--box-shadow-1);
             
             // style
             transition: var(--transition);
             text-decoration-line: none;
-            color: var(--color-primary);
+            color: var(--color-surface);
 
             // content layout
             display: flex;
@@ -144,12 +178,14 @@ nav {
 
             &:hover,
             &.actived-btn {
-                color: var(--color-accent);
-                // background-color: lighten($color-secondary, %);
-                // color: lighten($color-text, 20%);
+                background-color: var(--color-primary);
+                i {
+                    color: var(--color-on-primary);
+                }
             }
 
             i {
+                color: var(--color-on-secondary);
                 font-size: calc(var(--var-tab-size) * 0.5);
             }
         }
@@ -186,7 +222,7 @@ nav {
             // box-size
             width: 65%;
             height: 100%;
-            background-color: var(--color-secondary);
+            background-color: var(--color-primary);
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
         }
 
@@ -196,14 +232,12 @@ nav {
             border-radius: $br-sm;
             width: 68%;
             margin-left: 10%;
-            background-color: var(--color-accent-lighted);
-            // filter: brightness(1.2);
-            // background-color: rgb(242, 167, 179);
+            background-color: var(--color-primary-container);
             overflow: hidden;
             
             img {
                 object-fit: cover;
-                filter: blur(10px);
+                filter: blur(8px);
                 transition: var(--transition);
                 &:hover {
                     filter: none;
@@ -220,9 +254,9 @@ nav {
         padding-right: 5rem;
         h2 {
             font-size: 3rem;
-            transition: var(--transition);
+            // transition: var(--transition);
             span {
-                color: var(--color-accent);
+                color: var(--color-primary);
             }
         }
         p {
@@ -233,7 +267,6 @@ nav {
             text-decoration: none;
         }
     }
-
 }
 
 // about
@@ -251,7 +284,7 @@ nav {
         h3 {
             font-size: 2rem;
             span {
-                color: var(--color-accent);
+                color: var(--color-primary);
             }
         }
 
@@ -269,7 +302,7 @@ nav {
             font-size: 2rem;
             margin-bottom: $block-padding;
             span {
-                color: var(--color-accent);
+                color: var(--color-primary);
             }
         }
         .about-cards {
@@ -281,15 +314,15 @@ nav {
             .about-item {
                 // box
                 transition: var(--transition);
-                border: 1px solid var(--color-secondary);
-                background-color: var(--color-primary);
+                border: 1px solid var(--color-on-surface);
+                background-color: var(--color-surface);
                 border-radius: $br-sm;
                 padding: $content-padding;
                 box-shadow: 1px 4px 10px black;
                 &:hover {
                     cursor: default;
                     transform: translateY(-5px) scale(1.1);
-                    border-color: var(--color-accent);
+                    border-color: var(--color-primary);
                     box-shadow: 1px 4px 15px black;
                     z-index: 1;
                 }
@@ -311,7 +344,7 @@ nav {
                             top: 50%;
                             width: 0.6em;
                             height: 2px;
-                            background-color: var(--color-accent);
+                            background-color: var(--color-outline);
                         }    
                     }
                 }
@@ -327,13 +360,13 @@ nav {
         text-align: center;
         font-size: 2rem;
         span {
-            color: var(--color-accent);
+            color: var(--color-primary);
         }
         position: relative;
 
         &::before {
             content: "";
-            background-color: var(--color-secondary-lighted);
+            background-color: var(--color-outline);
             height: 2px;
             width: 40%;
 
@@ -359,21 +392,21 @@ nav {
                 display: flex;
                 align-items: center;
                 .bar-text {
-                    color: var(--color-secondary);
+                    color: var(--color-on-surface);
                 }
                 .bar-line {
                     position: relative;
                     width: 100%;
                     height: .45rem;
                     margin-left: $content-padding;
-                    border: 1px solid var(--color-secondary);
+                    border: 1px solid var(--color-on-surface);
                     border-radius: .2rem;
                     span {
                         position: absolute;
                         top: 0;
                         left: 0;
                         height: 100%;
-                        background-color: var(--color-accent);
+                        background-color: var(--color-primary);
                         transition: var(--transition);
                         // width: 90%;
                     }
@@ -412,9 +445,9 @@ nav {
         .project-info {
             height: 100%;
             width: 100%;
-            background-color: rgb(var(--color-secondary-rgb),0.8 );
+            background-color: var(--color-inverse-surface);
             border-radius: $br-sm;
-            color: var(--color-primary);
+            color: var(--color-inverse-on-surface);
             transform: scale(0);
             opacity: 0;
             transition: var(--transition);
@@ -430,7 +463,7 @@ nav {
             text-align: center;
 
             h3 {
-                color: var(--color-accent);
+                color: var(--color-inverse-primary);
             }
             
             p {
@@ -451,8 +484,8 @@ nav {
                     text-decoration: none;
                     height: 2rem;
                     width: 2rem;
-                    background-color: var(--color-primary);
-                    color: var(--color-secondary);
+                    background-color: var(--color-inverse-on-surface);
+                    color: var(--color-inverse-surface);
                     transition: var(--transition);
                     border-radius: 50%;
 
@@ -462,7 +495,7 @@ nav {
                     &:hover,
                     &:focus {
                         // background-color: $color-secondary;
-                        color: var(--color-accent);
+                        background-color: var(--color-inverse-primary);
                     }
                 }
             }
@@ -486,10 +519,11 @@ nav {
     
     .blog-item {
         position: relative;
-        background-color: var(--color-secondary-lighted);
+        background-color: var(--color-surface-variant);
+        color: var(--color-on-surface-variant);
         // padding: $block-padding;
         border-radius: $br-sm;
-        box-shadow: 1px 1px 10px var(--color-secondary);
+        box-shadow: 1px 1px 10px var(--color-on-surface);
         transition: var(--transition);
         display: flex;
         flex-direction: column;
@@ -505,7 +539,7 @@ nav {
         .blog-info {
             // order: 0;
             padding: $content-padding;
-            border-top: 3px solid var(--color-accent);
+            border-top: 3px solid var(--color-primary);
             h3 {
                 text-align: left;
                 transition: var(--transition);
@@ -514,9 +548,11 @@ nav {
 
         &:hover,
         &:focus {
-            box-shadow: 1px 1px 10px var(--color-accent);
+            box-shadow: 1px 1px 10px var(--color-primary);
+            transform: translateY(-5px);
             h3 {
-                color: var(--color-accent);
+                color: var(--color-primary);
+                font-weight: bolder;
             }
         }
     }
@@ -529,7 +565,7 @@ nav {
     .contact-left {
         flex: 2;
         h3 {
-            color: var(--color-accent);
+            color: var(--color-primary);
         }
         p {
             margin: $block-padding 0;
@@ -559,7 +595,7 @@ nav {
                 margin: 0 $block-padding;
                 padding: $content-padding;
                 border-radius: 50%;
-                border: 1px solid var(--color-accent);
+                border: 1px solid var(--color-primary);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -568,8 +604,8 @@ nav {
                 font-size: 25px;
                 transition: var(--transition);
                 &:hover {
-                    background-color: var(--color-accent);
-                    color: var(--color-primary);
+                    background-color: var(--color-primary);
+                    color: var(--color-surface);
                 }
             }
         }
@@ -581,7 +617,7 @@ nav {
         display: flex;
         flex-direction: column;
         h3 span {
-            color: var(--color-accent);
+            color: var(--color-primary);
         }
         .form-control {
             margin: $block-padding 0 ;
@@ -593,11 +629,10 @@ nav {
             input, textarea{
                 border-radius: $br-sm;
                 padding: 0 .8em;
-                outline: none;
                 width: 100%;
-                background-color: var(--color-primary);
+                background-color: var(--color-surface);
                 resize: none;
-                color: var(--color-secondary);
+                color: var(--color-on-surface);
             }
         }
         form section:last-child {
@@ -617,34 +652,35 @@ nav {
 .btn-container {
     display: flex;
     .main-btn {
-    
         // box
-        border: 3px solid var(--color-accent);
+        border: 2px solid var(--color-primary-container);
         border-radius: 30px;
-    
+        // background-color: var(--color-primary-container);
         position: relative;
         // content layout
         display: flex;
         align-items: center;
         overflow: hidden;
         // content style
-        color: inherit;
+        color: var(--color-on-primary-container);
         text-decoration: none;
         
         font-weight: 600;
     
         .btn-text {
-            padding: 0 .8rem;
-            color: var(--color-secondary)
+            padding: 0 .5rem;
+            
+            transition: var(--transition);
         }
     
         .btn-icon {
             // box
+            
             padding: .5rem;
             border-radius: 50%;
-            background-color: var(--color-accent);
+            background-color: var(--color-primary-container);
             overflow: hidden;
-    
+            color: var(--color-on-primary-container);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -659,14 +695,18 @@ nav {
             width: 110%;
             height: 110%;
             border-radius: 30px;
-            background-color: var(--color-accent);
+            background-color: var(--color-primary-container);
             transition: var(--transition);
             z-index: -1;
         }
         &:hover {
+            & {
+                background: none;
+            }
             &::before {
                 transform: translateX(-1px) translateY(-50%);
             }
+
         }
     }
 }
@@ -682,7 +722,7 @@ nav {
     
     padding: 1rem;
     span {
-        color: var(--color-accent);
+        color: var(--color-primary);
     }
     .title-bg {
         // box
@@ -695,7 +735,7 @@ nav {
         // content
         font-size: 6.5rem;
         font-weight: 800;
-        color: var(--color-secondary-lighted);
+        color: var(--color-surface-variant);
         
     }
     
@@ -706,8 +746,8 @@ nav {
     height: 50px;
     border-radius: 50%;
     border: none;
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--color-secondary-container);
+    color: var(--color-on-secondary-container);
 
     position: fixed;
     z-index: 10;
