@@ -5,9 +5,9 @@
 // $color-secondary: #0e1e23;
 // $color-accent: #0b3289;
 
-$area-padding: 2rem;
-$block-padding: 1rem;
-$content-padding: 0.5rem;
+$area-padding: 4rem;
+$block-padding: 2rem;
+$content-padding: 1rem;
 $br-sm: 16px;
 
 :root {
@@ -72,19 +72,63 @@ $br-sm: 16px;
 }
 
 html {
-    // font-size: calc(10px + 1vw);
-    
+    font-size: 10px;
 }
 
 body {
     // text
     // 还缺字体
-    // width: 1000px;
+    width: 1200px;
     font-family: sans-serif;
-    font-size: 1.1rem;
+    font-size: 2rem;
     color: var(--color-on-surface);
     outline: var(--color-primary);
     background-color: var(--color-surface);
+}
+
+
+.title-media {
+    // size
+    font-size: 5rem;
+    font-weight: bold;
+
+    letter-spacing: .5rem;
+    
+    // vertical alignment
+    line-height: 1.1;
+    margin-bottom: 3.5rem;
+}
+
+.title-small {
+    font-size: 3rem;
+    line-height: 1.1;
+
+    letter-spacing: .2rem;
+    margin-bottom: 1rem;
+}
+
+.sub-title-small {
+    font-size: 2.5rem;
+    line-height: 1.1;
+
+    letter-spacing: .2rem;
+    margin-bottom: 1rem;
+}
+
+.body-media {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin-bottom: 3.5rem;
+    letter-spacing: .1rem;
+    font-weight: 500;
+}
+
+.body-small {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
 }
 
 a {
@@ -252,17 +296,7 @@ nav {
         flex-direction: column;
         justify-content: center;
         padding-right: 5rem;
-        h2 {
-            font-size: 3rem;
-            // transition: var(--transition);
-            span {
-                color: var(--color-primary);
-            }
-        }
-        p {
-            margin: 1.5rem 0;
-            // line-height: 1.5;
-        }
+        
         a {
             text-decoration: none;
         }
@@ -282,14 +316,9 @@ nav {
         flex-direction: column;
         // justify-content: space-between;
         h3 {
-            font-size: 2rem;
             span {
                 color: var(--color-primary);
             }
-        }
-
-        p {
-            margin: $block-padding 0;
         }
         
         a {
@@ -299,8 +328,6 @@ nav {
 
     .about-left {
         .about-right-title {
-            font-size: 2rem;
-            margin-bottom: $block-padding;
             span {
                 color: var(--color-primary);
             }
@@ -308,8 +335,8 @@ nav {
         .about-cards {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(2, 12rem);
-            grid-auto-rows: 8rem;
+            grid-template-columns: repeat(2, 1fr);
+            // grid-auto-rows: 8rem;
             grid-gap: $block-padding;
             .about-item {
                 // box
@@ -327,16 +354,10 @@ nav {
                     z-index: 1;
                 }
                 .abt-text {
-                    display: flex;
-                    flex-direction: column;
-                    align-self: flex-start;
-                    .large-text {
-                        font-size: larger;
-                        font-weight: bolder;
-                    }
                     .small-text {
                         position: relative;
                         padding-left: 1em;
+                        margin-bottom: 0;
                         &::before {
                             content: "";
                             position: absolute;
@@ -356,9 +377,8 @@ nav {
 .about-skills {
     margin-top: $area-padding;
     h3 {
-        padding: $block-padding;
+        padding-top: 2rem;
         text-align: center;
-        font-size: 2rem;
         span {
             color: var(--color-primary);
         }
@@ -369,7 +389,6 @@ nav {
             background-color: var(--color-outline);
             height: 2px;
             width: 40%;
-
             // 
             position: absolute;
             left: 50%;
@@ -387,20 +406,21 @@ nav {
             .progress-title {
                 text-transform: uppercase;
                 font-weight: 500;
+                margin-bottom: 0;
             }
             .progress-bar {
                 display: flex;
                 align-items: center;
                 .bar-text {
-                    color: var(--color-on-surface);
+                    color: var(--color-secondary);
                 }
                 .bar-line {
                     position: relative;
                     width: 100%;
-                    height: .45rem;
+                    height: 1rem;
                     margin-left: $content-padding;
                     border: 1px solid var(--color-on-surface);
-                    border-radius: .2rem;
+                    border-radius: .5rem;
                     span {
                         position: absolute;
                         top: 0;
@@ -419,7 +439,6 @@ nav {
 // portfolio
 .portfolio-text {
     text-align: center;
-    padding: $area-padding;
 }
 
 .portfolio-cards {
@@ -467,9 +486,8 @@ nav {
             }
             
             p {
-                padding: $block-padding;
                 width: 100%;
-                white-space: nowrap; 
+                // white-space: nowrap; 
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
@@ -477,21 +495,25 @@ nav {
             .links {
                 display: flex;
                 flex-direction: row;
-
+                --project-link-icon-size: 4rem;
                 a {
                     // outer box
-                    margin: 0 $content-padding;
+                    margin: 0 calc(var(--project-link-icon-size)*0.3);
                     text-decoration: none;
-                    height: 2rem;
-                    width: 2rem;
+                    height: var(--project-link-icon-size);
+                    width: var(--project-link-icon-size);
                     background-color: var(--color-inverse-on-surface);
                     color: var(--color-inverse-surface);
                     transition: var(--transition);
                     border-radius: 50%;
-
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
+                    i {
+                        font-size: calc(var(--project-link-icon-size)*0.6);
+                    }
+
                     &:hover,
                     &:focus {
                         // background-color: $color-secondary;
@@ -538,10 +560,10 @@ nav {
 
         .blog-info {
             // order: 0;
-            padding: $content-padding;
+            padding: 1rem 2rem 0 2rem;
             border-top: 3px solid var(--color-primary);
             h3 {
-                text-align: left;
+                // text-align: left;
                 transition: var(--transition);
             }
         }
@@ -603,7 +625,8 @@ nav {
                 height: 50px;
                 font-size: 25px;
                 transition: var(--transition);
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color: var(--color-primary);
                     color: var(--color-surface);
                 }
@@ -647,7 +670,6 @@ nav {
     }
 }
 
-
 // independent components
 .btn-container {
     display: flex;
@@ -660,6 +682,7 @@ nav {
         // content layout
         display: flex;
         align-items: center;
+        text-wrap: nowrap;
         overflow: hidden;
         // content style
         color: var(--color-on-primary-container);
@@ -668,15 +691,15 @@ nav {
         font-weight: 600;
     
         .btn-text {
-            padding: 0 .5rem;
-            
+            align-self: center;
+            padding: 0 1rem 0 1.5rem;
             transition: var(--transition);
         }
     
         .btn-icon {
             // box
             
-            padding: .5rem;
+            padding: 1rem;
             border-radius: 50%;
             background-color: var(--color-primary-container);
             overflow: hidden;
@@ -717,12 +740,9 @@ nav {
     position: relative;
     // content
     text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
-    
-    padding: 1rem;
     span {
         color: var(--color-primary);
+        // line-height: 1.1;
     }
     .title-bg {
         // box
@@ -733,10 +753,9 @@ nav {
         transform: translate(-50%, -50%);
         z-index: -1;
         // content
-        font-size: 6.5rem;
+        font-size: 10rem;
         font-weight: 800;
         color: var(--color-surface-variant);
-        
     }
     
 }
