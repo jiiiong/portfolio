@@ -1,32 +1,47 @@
 # Definition for a binary tree node.
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
+import collections
 
+# Definition for a binary tree node.
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-        
-class Solution:
-    def flatten(self, root: Optional[TreeNode]) -> None:
-        """
-        Do not return anything, modify root in-place instead.
-        """
-        def helper(root: TreeNode) -> TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
-            if not root.right:
-                if root.left:
-                    helper(root.left)
-                    root.right = root.left
-                return root
-            elif not root.left:
-                return helper(root.right)
-            else:
-                left_last = helper(root.left)
-                right_last = helper(root.right)
-                left_last.right = root.right
-                root.right = root.left
-                return right_last
-        if not root:
-            return 
-        helper(root)
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        
+        # 前序遍历找到 p
+        
+        def pre_order(root: Optional[TreeNode]):
+            if not root:
+                return
+            
+            nonlocal meet_first
+            if not meet_first:
+                ancestors.append(root)
+                if root == p or root == q:
+                    meet_first = True
+            elif root == p or root == q:
+                nonlocal cloest_ancestor
+                cloest_ancestor = ancestors[-1]
+
+            pre_order(root.left)
+            pre_order(root.right)
+            if ancestors[-1] == root:
+                ancestors.pop()
+
+        meet_first = False
+        cloest_ancestor = root
+        ancestors = []
+        return cloest_ancestor
+
+            
+            
+                
+        
+
+
+
+        

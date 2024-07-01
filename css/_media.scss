@@ -1,0 +1,104 @@
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 9px;
+    }
+    .section {
+        // position
+        padding: 0 $content-padding;
+        padding-bottom: 8rem;
+        min-height: unset;
+        &.sec1 {
+            padding: unset;
+            padding-bottom: 8rem;
+        }
+    }
+    nav {
+        // position
+        all: initial;
+        width: 100%;
+        background-color: var(--color-surface);
+        border-top: 2px solid var(--color-outline);
+        position: fixed;
+        z-index: 10;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        // box: 由content决定
+    
+        // list container
+        ul {
+            // content layout
+            flex-direction: row;
+            a {
+                // position: flow as a flex item
+                // box
+                --var-tab-size: 5.5rem;
+                // margin: .4rem .8rem ;
+                margin-block: $minimal-padding ;
+                margin-inline: $minimal-padding;
+                width: var(--var-tab-size);
+                height: var(--var-tab-size);
+            }
+        }
+    }
+    .theme-control {
+        --theme-contorl-icon: 5rem;
+    }
+    .home-content {
+        // box-size
+        // height: 100vh;s
+        height: unset;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: initial;
+        .home-left{
+            // box
+            // position: create new stack context
+            order: unset;
+
+            .hero-shape {
+                display: none;
+            }
+    
+            .hero {
+                // position
+                // box
+                border-radius: $br-sm;
+                width: 33rem;
+                margin: 0 auto;
+            }
+        }
+    
+        .home-right {
+            padding: 0 0;
+            margin: 0 auto;
+        }
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        // padding-top: $area-padding;
+        
+        .about-right {
+            margin-left: 0;
+            padding-top: $content-padding;
+        }
+    }
+    .about-skills {
+        .progess-cards {
+            margin-bottom: $minimal-padding;
+        }
+    }
+    .contact-content {
+        // padding-top: $area-padding;
+        display: unset;
+        .contact-left {
+            border-right: none;
+        }
+        .contact-right {
+            margin-top: $block-padding;
+            padding: 0 0;
+        }
+    }
+}

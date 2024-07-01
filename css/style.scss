@@ -1,6 +1,7 @@
 @use 'reset';
 @use 'md' as md;
 
+
 // $color-primary: #e3f9fd;
 // $color-secondary: #0e1e23;
 // $color-accent: #0b3289;
@@ -8,6 +9,7 @@
 $area-padding: 11rem;
 $block-padding: 6rem;
 $content-padding: 2rem;
+$minimal-padding: 1rem;
 $br-sm: 16px;
 
 :root {
@@ -19,14 +21,14 @@ $br-sm: 16px;
 
     // 统一整个页面的 negative space，
     --inner-padding: 0.5rem;
-    --nav-inner-margin: 0.4rem;
+    --nav-inner-margin: 1rem;
 
     // 颜色方案
     --color-surface: #{md.$md-sys-color-surface};
     --color-on-surface: #{md.$md-sys-color-on-surface};
     --color-surface-variant: #{md.$md-sys-color-surface-variant};
     --color-on-surface-variant: #{md.$md-sys-color-on-surface-variant};
-
+    --color-surface-tint: #{md.$md-sys-color-surface-tint};
     --color-secondary-rgb: 14, 30, 35;
     --color-secondary-lighted:  #c9e0e7;
 
@@ -52,7 +54,8 @@ $br-sm: 16px;
         --color-on-surface: #{md.$md-sys-color-on-surface-dark};
         --color-surface-variant: #{md.$md-sys-color-surface-variant-dark};
         --color-on-surface-variant: #{md.$md-sys-color-on-surface-variant-dark};
-    
+        --color-surface-tint: #{md.$md-sys-color-surface-tint-dark};
+
         --color-primary: #{md.$md-sys-color-primary-dark};
         --color-on-primary: #{md.$md-sys-color-on-primary-dark};
         --color-primary-container: #{md.$md-sys-color-primary-container-dark};
@@ -73,7 +76,6 @@ $br-sm: 16px;
 
 html {
     font-size: 10px;
-
 }
 
 body {
@@ -164,7 +166,6 @@ a {
     &.sec1 {
         padding-left: 0;
         // transform: translateY(0) scaleY(1);
-        
     }
     
     &.section.active {
@@ -808,3 +809,5 @@ nav {
         pointer-events: none;
     }
 }
+
+@import 'media';
