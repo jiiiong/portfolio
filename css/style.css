@@ -674,6 +674,8 @@ nav ul a i {
   color: var(--color-primary);
 }
 .main-title .title-bg {
+  max-width: 100%;
+  overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -720,7 +722,7 @@ nav ul a i {
     min-height: unset;
   }
   .section.sec1 {
-    padding: unset;
+    padding: 0 2rem;
     padding-bottom: 8rem;
   }
   nav {
