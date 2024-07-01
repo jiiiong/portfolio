@@ -772,6 +772,9 @@ nav ul a i {
     display: grid;
     grid-template-columns: 1fr;
   }
+  .about-content .about-left .about-cards {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
   .about-content .about-right {
     margin-left: 0;
     padding-top: 2rem;

@@ -79,7 +79,11 @@
         display: grid;
         grid-template-columns: 1fr;
         // padding-top: $area-padding;
-        
+        .about-left {
+            .about-cards {
+                grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+            }
+        }
         .about-right {
             margin-left: 0;
             padding-top: $content-padding;
