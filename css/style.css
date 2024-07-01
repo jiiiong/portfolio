@@ -712,7 +712,7 @@ nav ul a i {
   pointer-events: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   html {
     font-size: 9px;
   }
