@@ -426,6 +426,7 @@ nav ul a i {
 }
 .portfolio-cards .portfolio-item {
   border-radius: 16px;
+  border: 2px solid var(--color-outline);
   position: relative;
   display: flex;
   align-items: center;
