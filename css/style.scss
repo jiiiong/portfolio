@@ -543,8 +543,7 @@ nav {
 
         }
 
-        &:hover .project-info,
-        &:focus-within .project-info {
+        &:hover .project-info {
             opacity: 1;
             transform: scale(1);
         }

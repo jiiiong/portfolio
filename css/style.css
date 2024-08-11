@@ -490,7 +490,7 @@ nav ul a i {
 .portfolio-cards .portfolio-item .project-info .links a:hover, .portfolio-cards .portfolio-item .project-info .links a:focus {
   background-color: var(--color-inverse-primary);
 }
-.portfolio-cards .portfolio-item:hover .project-info, .portfolio-cards .portfolio-item:focus-within .project-info {
+.portfolio-cards .portfolio-item:hover .project-info {
   opacity: 1;
   transform: scale(1);
 }
