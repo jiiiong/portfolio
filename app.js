@@ -20,8 +20,6 @@ function PageTransitions() {
             
         })
     }
-
-
 }
 
 function renderProgressBar() {
@@ -42,3 +40,13 @@ themeControl.addEventListener("click", () => {
     let element = document.body;
     element.classList.toggle('dark-mode');
 });
+
+
+function openWindow(event) {
+    event.preventDefault(); // 阻止默认的链接点击行为
+    window.open(
+        "http://121.40.63.216/", 
+        "_blank", 
+        "width=375,height=667"
+    );
+}
