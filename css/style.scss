@@ -534,7 +534,7 @@ nav {
                     }
 
                     &:hover,
-                    &:focus {
+                    &:focus-visible {
                         // background-color: $color-secondary;
                         background-color: var(--color-inverse-primary);
                     }

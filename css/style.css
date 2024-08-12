@@ -487,7 +487,7 @@ nav ul a i {
 .portfolio-cards .portfolio-item .project-info .links a i {
   font-size: calc(var(--project-link-icon-size) * 0.6);
 }
-.portfolio-cards .portfolio-item .project-info .links a:hover, .portfolio-cards .portfolio-item .project-info .links a:focus {
+.portfolio-cards .portfolio-item .project-info .links a:hover, .portfolio-cards .portfolio-item .project-info .links a:focus-visible {
   background-color: var(--color-inverse-primary);
 }
 .portfolio-cards .portfolio-item:hover .project-info {
